@@ -1,19 +1,18 @@
 const db = "http://localhost:5678/api/";
-const path = "/users/login"
+const path = "users/login"
 
-function log(formData){
+export function log(formData){
 
     let response;
 
-    fetch(db+path,{
+    return fetch(db+path,{
         method:'POST',
         headers:{
             "content-Type":"application/json"
         },
-        body: JSON.stringify(formData)
+        body: formData
     })
         .then(r=>{
-
             if(!r.ok){
                 throw new Error("login error : "+r.status);
             }
@@ -22,14 +21,13 @@ function log(formData){
         })
         .then(data=>{
 
-            response = data;
+            return data;
 
         })
         .catch(error=>{
 
             console.error("login error : "+error);
+            return error
 
         })
-
-        return response
 }
