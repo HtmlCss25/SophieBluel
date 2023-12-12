@@ -1,23 +1,22 @@
 const db = "http://localhost:5678/api/";
-const path = "/works"
+const path = "works/"
 
 let promises = []
 
 function deleteWork(workId,token){
 
     let response;
-    fetch(db+path,{
-        method:'POST',
+    fetch(db+path+workId,{
+        method:'DELETE',
         headers:{
             'Authorization': 'Bearer ' + token,
             "content-Type":"application/json"
-        },
-        body: JSON.stringify(workId)
+        }
     })
         .then(r=>{
 
             if(!r.ok){
-                throw new Error("failed to add a new work, error : "+r.status);
+                throw new Error("failed to remove a new work, error : "+r.status);
             }
 
             return r.json();

@@ -1,4 +1,6 @@
 //all changes on homepage when user is connected like new button for adding new work
+
+import deleteWork from "./deleteWork.js";
 function preventDefaultWheel(e){
     e.preventDefault()
 }
@@ -42,9 +44,25 @@ function createEdtionBanner(body){
     body.classList.add('editionMode')
 }
 
+function handleDeleteBtnClick(id){
+
+    if(sessionStorage.token){
+        const response = deleteWork(id,sessionStorage.token)
+        console.log(response)
+    }
+
+}
+
+function resetModal(modal){
+
+    while(modal.firstChild){
+        modal.removeChild(modal.firstChild)
+    }
+
+}
+
 function createModalCards(section,data){
 
-    console.log(data)
 
     for(const work of data.works){
 
@@ -57,6 +75,9 @@ function createModalCards(section,data){
         icon.classList.add('fa-solid')
         icon.classList.add('fa-trash-can')
         icon.id = work.id
+        icon.addEventListener('click',()=>{
+            handleDeleteBtnClick(icon.id)
+        })
         card.appendChild(image)
         card.appendChild(icon)
         section.appendChild(card)
@@ -71,13 +92,31 @@ function createModalCardSection(modal,data){
 
     createModalCards(modalCardSection,data)
     modal.appendChild(modalCardSection)
+    return modalCardSection
 }
 
 function createModal(body, data){
-    const bcg = document.createElement('div')
-    bcg.classList.add('modal-background')
-    const modal = document.createElement('div')
-    modal.classList.add("galleryModal")
+    const existingModal = document.querySelector(".galleryModal")
+    if(existingModal){
+        resetModal(existingModal)
+    }
+    const existingBcg = document.querySelector('.modal-background')
+    let bcg;
+    if(!existingBcg){
+        bcg = document.createElement('div')
+        bcg.classList.add('modal-background')
+    }
+    else if(existingBcg){
+        bcg= existingBcg;
+    }
+
+    let modal;
+    if(!existingModal){
+        modal = document.createElement('div')
+        modal.classList.add("galleryModal")
+    }else if(existingModal){
+        modal = existingModal
+    }
     const title = document.createElement('h2')
     title.innerText = 'Galerie photo'
     modal.appendChild(title)
@@ -102,6 +141,9 @@ function createModal(body, data){
     addWorkBtn.value = "Ajouter une photo"
     addWorkBtn.id = "addWorkBtn"
     addWorkBtn.type = "submit"
+    addWorkBtn.addEventListener('click',()=>{
+        handleAddWorkBtnClick(body,data,bcg,modal)
+    })
     modal.appendChild(addWorkBtn)
     preventScroll()
 }
@@ -117,6 +159,38 @@ function handleModifBtnClic(body,data){
         
 
     })
+
+}
+
+function handleAddWorkBtnClick(body,data,bcg,modal){
+    resetModal(modal)
+
+    const title = document.createElement('h2')
+    title.innerText = 'Ajout photo'
+    modal.appendChild(title)
+    const icon = document.createElement('i')
+    icon.classList.add('fa-solid')
+    icon.classList.add('fa-xmark')
+    icon.addEventListener('click',()=>{
+        body.removeChild(bcg)
+        allowScroll()
+    })
+    modal.appendChild(icon)
+
+    const arrowBack = document.createElement('i')
+    arrowBack.classList.add('fa-solid')
+    arrowBack.classList.add('fa-arrow-left')
+    arrowBack.addEventListener('click',()=>{
+
+        createModal(body,data)
+
+    })
+    modal.appendChild(arrowBack)
+
+    const fileInputDiv = document.createElement('div')
+    fileInputDiv.classList.add('file-input-div')
+    const fileIcon = document.createElement('i')
+    fileIcon.classList.add('')
 
 }
 

@@ -385,6 +385,12 @@ footer nav ul {
   top: 1.63rem;
   font-size: 1.5rem;
 }
+.editionMode .galleryModal .fa-arrow-left {
+  position: absolute;
+  left: 1.88rem;
+  top: 1.63rem;
+  font-size: 1.7rem;
+}
 .editionMode .galleryModal .separator {
   width: 26.25rem;
   height: 0.0625rem;
