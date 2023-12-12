@@ -1,0 +1,46 @@
+.editionMode{
+
+    .top-banner-edition-mode{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3.6875rem; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000;
+        color: #fff;
+        gap: 0.71rem;
+    }
+
+    header{
+        margin-top: 5.5rem;
+    }
+
+    #portfolio{
+        position: relative;
+
+    
+    }
+    .work-modif-div{
+        display: flex;
+        position: absolute;
+        top: 0.6rem;
+        right: 33%;
+        gap: 0.15rem;
+        cursor: pointer;
+        p{
+            user-select: none;
+        }
+        &:hover{
+            
+            p{
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+
+

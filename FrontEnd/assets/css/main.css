@@ -234,6 +234,10 @@ footer nav ul {
   background-color: #1D6154;
 }
 
+#logoutBtn {
+  display: none;
+}
+
 .login-section {
   margin-top: 9.38rem;
   display: flex;
@@ -305,4 +309,40 @@ footer nav ul {
 .login-section__form .error-message {
   text-align: center;
   color: rgba(255, 0, 0, 0.644);
+}
+
+.editionMode .top-banner-edition-mode {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3.6875rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  gap: 0.71rem;
+}
+.editionMode header {
+  margin-top: 5.5rem;
+}
+.editionMode #portfolio {
+  position: relative;
+}
+.editionMode .work-modif-div {
+  display: flex;
+  position: absolute;
+  top: 0.6rem;
+  right: 33%;
+  gap: 0.15rem;
+  cursor: pointer;
+}
+.editionMode .work-modif-div p {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.editionMode .work-modif-div:hover p {
+  text-decoration: underline;
 }/*# sourceMappingURL=main.css.map */
