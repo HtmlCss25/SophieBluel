@@ -1,6 +1,8 @@
 const db = "http://localhost:5678/api/";
 const path = "/works"
 
+let promises = []
+
 function deleteWork(workId,token){
 
     let response;

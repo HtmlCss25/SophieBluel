@@ -7,12 +7,12 @@ import { editionModeHomepage } from "./modules/editionModeHomepage.js";
 
 document.addEventListener("DOMContentLoaded",()=>{
     
-    editionModeHomepage()
 
     getDataFromServer()
         .then(response=>{
             createFilterBar(response)
             showAllCards(response)
+            editionModeHomepage(response)
         })
         
     handleConnectionFormSubmit()
