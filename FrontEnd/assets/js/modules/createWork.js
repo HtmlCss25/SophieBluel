@@ -13,7 +13,7 @@ function createWork(formData,token){
         body: formData
     })
         .then(r=>{
-
+            
             if(!r.ok){
                 throw new Error("failed to add a new work, error : "+r.status);
             }

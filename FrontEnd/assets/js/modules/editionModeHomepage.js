@@ -167,7 +167,9 @@ function handleModifBtnClic(body,data){
 }
 
 function toggleSubmit(btn,titleInput,fileInput,categoryInput){
-    if(titleInput.value !== null && titleInput.value !== undefined && titleInput.value.length > 5 && fileInput.value !== null && fileInput.value !== undefined && categoryInput.value !== null && categoryInput.value !== undefined && categoryInput.value !== "unselected"){
+    if(titleInput.value !== null && titleInput.value !== undefined && titleInput.value.length > 5 
+        && fileInput.value !== null && fileInput.value !== undefined && fileInput.files.length > 0
+        && categoryInput.value !== null && categoryInput.value !== undefined && categoryInput.value !== "unselected"){
         if(btn.classList.contains('disabled')){
             btn.classList.remove('disabled')
             btn.removeAttribute('disabled')
@@ -318,15 +320,12 @@ function handleAddWorkBtnClick(body,data,bcg,modal){
 
         if(titleInput.value === null || titleInput.value === undefined || titleInput.value.length < 5){
             titleInput.classList.add('error')
-            console.log('test 1')
         }
         if(fileInput.value === null || fileInput.value === undefined || fileInput.value === ""){
             label.classList.add('error')
-            console.log('test 2')
         }
         if(categoryInput.value === null || categoryInput.value === undefined ){
             categoryInput.classList.add('error')
-            console.log('test 3')
         }
         if(
             titleInput.value.length > 5 &&
@@ -344,7 +343,6 @@ function handleAddWorkBtnClick(body,data,bcg,modal){
             //     "title": titleInput.value,
             //     "category": Number(categoryInput.value)
             //   }
-              console.log('condition verifiée')
             // quel format pour l'url de l'image ? (error 500)
             
             createWork(formData, sessionStorage.token)
