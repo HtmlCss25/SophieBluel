@@ -180,6 +180,7 @@ function toggleSubmit(btn,titleInput,fileInput,categoryInput){
     }
 }
 
+//change modal elements when click on button "Ajouter une photo"
 function handleAddWorkBtnClick(body,data,bcg,modal){
     resetModal(modal)
 
@@ -221,7 +222,9 @@ function handleAddWorkBtnClick(body,data,bcg,modal){
     fileInput.addEventListener('change',()=>{
         toggleSubmit(addWorkBtn,titleInput,fileInput,categoryInput)
         if(fileInput.files[0]){
-            
+                label.style.display = "none"
+                fileIcon.style.display = "none"
+                para.style.display = "none"
                 const image = document.createElement('img')
                 image.src = URL.createObjectURL(fileInput.files[0])
                 image.id = "previewImage"

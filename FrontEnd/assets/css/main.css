@@ -447,6 +447,7 @@ footer nav ul {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  height: 7.5rem;
   gap: 0.4rem;
   padding: 1.2rem 0;
   background-color: #E8F1F6;
@@ -480,6 +481,10 @@ footer nav ul {
   font-family: "Work Sans";
   font-size: 0.625rem;
   font-weight: 400;
+}
+.editionMode #newWorkForm .file-input-div #previewImage {
+  height: 100%;
+  width: auto;
 }
 .editionMode #newWorkForm fieldset {
   display: flex;
