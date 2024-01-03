@@ -3,7 +3,6 @@ const path = "users/login"
 
 export function log(formData){
 
-    let response;
 
     return fetch(db+path,{
         method:'POST',

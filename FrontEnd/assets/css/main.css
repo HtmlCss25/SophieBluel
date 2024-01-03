@@ -348,7 +348,7 @@ footer nav ul {
 }
 .editionMode .modal-background {
   background-color: rgba(0, 0, 0, 0.8);
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
@@ -434,4 +434,82 @@ footer nav ul {
 .editionMode .modalCard .fa-trash-can:hover {
   color: black;
   background-color: white;
+}
+.editionMode #newWorkForm {
+  display: flex;
+  flex-direction: column;
+}
+.editionMode #newWorkForm .error {
+  border: 1px solid red;
+}
+.editionMode #newWorkForm .file-input-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 0.4rem;
+  padding: 1.2rem 0;
+  background-color: #E8F1F6;
+  border-radius: 0.1875rem;
+  margin-bottom: 1.88rem;
+}
+.editionMode #newWorkForm .file-input-div img {
+  width: 4.25863rem;
+  height: 3.72631rem;
+}
+.editionMode #newWorkForm .file-input-div label {
+  color: #306685;
+  text-align: center;
+  font-family: "Work Sans";
+  font-size: 0.875rem;
+  font-weight: 500;
+  width: 10.8125rem;
+  line-height: 2.25rem;
+  border-radius: 3.125rem;
+  background-color: #CBD6DC;
+  border: 1px solid #CBD6DC;
+  transition: border 0.1s, background-color 0.1s;
+}
+.editionMode #newWorkForm .file-input-div label:hover {
+  border: 1px solid #306685;
+  background-color: #c5d1d8;
+}
+.editionMode #newWorkForm .file-input-div p {
+  color: #444;
+  text-align: center;
+  font-family: "Work Sans";
+  font-size: 0.625rem;
+  font-weight: 400;
+}
+.editionMode #newWorkForm fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 0.62rem;
+  margin-bottom: 1.3rem;
+}
+.editionMode #newWorkForm fieldset label {
+  color: #3D3D3D;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.editionMode #newWorkForm fieldset input, .editionMode #newWorkForm fieldset select {
+  width: 26.25rem;
+  height: 3.1875rem;
+  box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
+  border: none;
+  text-align: center;
+  background-color: #fff;
+}
+.editionMode #newWorkForm fieldset input:focus, .editionMode #newWorkForm fieldset select:focus {
+  outline: none;
+}
+.editionMode #newWorkForm input[type=submit] {
+  margin: 0;
+  align-self: center;
+}
+.editionMode #newWorkForm .disabled {
+  background-color: #CBD6DC;
+}
+.editionMode #newWorkForm .disabled:hover {
+  opacity: 1;
 }/*# sourceMappingURL=main.css.map */

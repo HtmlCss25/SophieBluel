@@ -1,16 +1,16 @@
 const db = "http://localhost:5678/api/";
-const path = "/works"
+const path = "works"
 
 function createWork(formData,token){
 
-    let response;
-    fetch(db+path,{
+    
+    return fetch(db+path,{
         method:'POST',
         headers:{
             'Authorization': 'Bearer ' + token,
-            "content-Type":"application/json"
+            // "content-Type":"multipart/form-data"
         },
-        body: JSON.stringify(formData)
+        body: formData
     })
         .then(r=>{
 
@@ -30,8 +30,6 @@ function createWork(formData,token){
             console.error("failed to add a new work, error : "+error);
 
         })
-
-        return response
 }
 
 export default createWork;

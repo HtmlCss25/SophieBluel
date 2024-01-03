@@ -18,7 +18,7 @@ function createCard(work){
 }
 
 export function showAllCards(data){
-    for(const work of data.works){
+    for(const work of data){
         createCard(work)
     }
 }
@@ -45,7 +45,7 @@ function handleFilterBtnClick(e,data){
         
     }else{
 
-        for(const work of data.works){
+        for(const work of data){
             
             if(work.categoryId==e.target.id){
                 
