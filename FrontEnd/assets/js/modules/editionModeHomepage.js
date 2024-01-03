@@ -3,6 +3,7 @@
 import deleteWork from "./deleteWork.js";
 import getCategories from "./getCategories.js";
 import createWork from "./createWork.js";
+import logout from "./logout.js";
 
 function preventDefaultWheel(e){
     e.preventDefault()
@@ -387,6 +388,8 @@ export function editionModeHomepage(data){
 
         loginBtn.style.display = "none"
         logoutBtn.style.display = "block"
+        logoutBtn.addEventListener("click", logout)
+
         filterBar.style.display = "none"
         
         createEdtionBanner(body)
